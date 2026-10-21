@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: codegen
+      POSTGRES_PASSWORD: codegen
+      POSTGRES_DB: codegen
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U codegen -d codegen"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks: [codegen-net]
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg2://codegen:codegen@db:5432/codegen
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [codegen-net]
+
+volumes:
+  pgdata:
+
+networks:
+  codegen-net:
