@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+         xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Model xmi:id="m1" name="Shop">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="t_int" name="Integer"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="c1" name="Customer">
+      <ownedAttribute xmi:id="a1" name="fullName">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="a2" name="age" type="t_int"/>
+      <ownedOperation xmi:id="o1" name="placeOrder">
+        <ownedParameter xmi:id="p1" name="order" type="c2"/>
+        <ownedParameter xmi:id="p2" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="c2" name="Order">
+      <ownedAttribute xmi:id="a3" name="totalPrice">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Real"/>
+      </ownedAttribute>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>
