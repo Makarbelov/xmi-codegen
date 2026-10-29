@@ -24,3 +24,4 @@ ruff check .            # линтер
 mypy app                # типы
 pytest --cov=app        # тесты
 ```
+## ЛИТКОД АЛГОРИТМЫ GOLANG ВОЛК
